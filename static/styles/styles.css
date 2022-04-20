@@ -107,7 +107,8 @@ header > nav a:hover::after {
 
 footer {
     color: whitesmoke;
-    background: #191b1d;
+    /*background: #191b1d;*/
+    background: #0f1732;
     box-sizing: border-box;
     padding: 10px 30px;
     position: relative;
@@ -133,12 +134,89 @@ footer {
     text-decoration: none;
 }
 
-.footer-content a:hover
-{
+.footer-content a:hover {
     color: white;
     text-decoration: underline;
 }
 
+main {
+    margin-top: 15px;
+}
+
+#intro {
+    box-sizing: border-box;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #0f1732;
+}
+
+#intro > div {
+    max-width: 350px;
+}
+
+#intro > div > img {
+    max-width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+#intro > div > h3, #intro > div > p {
+    text-align: center;
+    margin: 10px;
+    color: whitesmoke;
+}
+
+#description {
+    margin: 50px 100px;
+}
+
+#feedback {
+    box-sizing: border-box;
+    padding: 50px 100px;
+    background: lightgray;
+}
+
+.feedback-form {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.feedback-form input[type=text], textarea {
+    font-size: 16pt;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.feedback-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.feedback-form input[type="submit"]
+{
+    font-size: 16pt;
+    display: block;
+    width: 160px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: dimgrey;
+    color: ghostwhite;
+    transition: background-color .2s;
+}
+
+.feedback-form input[type="submit"]:hover {
+    background-color: #0f1732;
+    transition: background-color .2s;
+}
 
 @media screen and (max-width: 700px) {
     header {
@@ -175,5 +253,27 @@ footer {
     header > .title > img {
         float: none;
         margin: 5px auto;
+    }
+
+    #intro {
+        display: block;
+    }
+
+    #intro > div {
+        margin-bottom: 30px;
+    }
+
+    #description {
+        margin: 50px;
+    }
+
+    #feedback {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    #intro div:last-child{
+        margin-top: 70px;
     }
 }
