@@ -29,8 +29,8 @@ echo <<<_END
             <ul>
                 <li><a href="index.php">Главная</a></li>
                 <li><a href="status.php">Статус заказа</a></li>
-                <li><a href="#description">О нас</a></li>
-                <li><a href="#feedback">Обратная связь</a></li>
+                <li><a href="index.php#description">О нас</a></li>
+                <li><a href="index.php#feedback">Обратная связь</a></li>
             </ul>
         </nav>
     </header>

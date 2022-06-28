@@ -13,10 +13,21 @@ class DbContext {
         $query->execute([$name, $email, $message]);
     }
 
+    public function getAllAppeals() {
+        $query = $this->pdo->query("SELECT * FROM appeals ORDER BY id DESC");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getStatus($phone) {
         $query = $this->pdo->prepare("SELECT * FROM history WHERE phone = ? ORDER BY date DESC LIMIT 1;");
         $query->execute([$phone]);
         return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function setStatus($phone, $status, $description) {
+        $query = $this->pdo->prepare("INSERT INTO history (phone, status, date, description)" .
+            "VALUES (?, ?, CURRENT_TIMESTAMP, ?)");
+        $query->execute([$phone, $status, $description]);
     }
 }
 

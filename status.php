@@ -21,7 +21,13 @@ $phone = $_GET['phone'];
     <section id="status" style="background-color: white">
         <h2>Проверить статус заказа:</h2>
         <div class="container">
-            <?php if (!isset($phone) || strlen($phone) < 3 || count($statusObj = dbContext()->getStatus($phone)) == 0): ?>
+            <?php if (!isset($phone) || strlen($phone) < 3): ?>
+                <form method="get">
+                    <label>Номер телефона: <input type="text" name="phone" value="+7"></label>
+                    <button>Проверить</button>
+                </form>
+            <?php elseif (count($statusObj = dbContext()->getStatus($phone)) == 0): ?>
+                <h3 style="color: red">Заказ не найден</h3>
                 <form method="get">
                     <label>Номер телефона: <input type="text" name="phone" value="+7"></label>
                     <button>Проверить</button>
