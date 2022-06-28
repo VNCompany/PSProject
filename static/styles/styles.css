@@ -107,7 +107,6 @@ header > nav a:hover::after {
 
 footer {
     color: whitesmoke;
-    /*background: #191b1d;*/
     background: #0f1732;
     box-sizing: border-box;
     padding: 10px 30px;
@@ -171,6 +170,20 @@ main {
     margin: 50px 100px;
 }
 
+.ya-map {
+    vertical-align: bottom;
+}
+
+#description .container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#description .container div:last-child {
+    margin-right: 15px;
+    font-size: 15pt;
+}
+
 #feedback {
     box-sizing: border-box;
     padding: 50px 100px;
@@ -216,6 +229,15 @@ main {
 .feedback-form input[type="submit"]:hover {
     background-color: #0f1732;
     transition: background-color .2s;
+}
+
+#status {padding: 15px 30px;}
+#status label { font-size: 15pt; }
+#status input, button {
+    border: 1px solid #0f1732;
+    border-radius: 4px;
+    font-size: 15pt;
+    margin-top: 5px;
 }
 
 @media screen and (max-width: 700px) {
@@ -265,6 +287,19 @@ main {
 
     #description {
         margin: 50px;
+    }
+
+    #description .container {
+        flex-direction: column;
+    }
+
+    #description .container div:last-child {
+        margin: 0;
+        text-align: center;
+    }
+
+    #description img {
+        max-width: 100%;
     }
 
     #feedback {
